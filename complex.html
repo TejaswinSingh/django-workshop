@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Site</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: white !important;
+            background: linear-gradient(270deg, #f2f4f6, #4392e0, #20b186, #6aedb4, #fcb045, #fd1d1d, #833ab4, #ff5722);
+            background-size: 800% 800%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background: #495057;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(270deg, #f2f4f6, #4392e0, #20b186, #6aedb4, #fcb045, #fd1d1d, #833ab4, #ff5722);
+            background-size: 800% 800%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            color: white !important;
+        }
+
+        .main {
+            flex: 3;
+            padding: 20px;
+            margin-right: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            color: white !important;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(270deg, #f2f4f6, #4392e0, #20b186, #6aedb4, #fcb045, #fd1d1d, #833ab4, #ff5722);
+            background-size: 800% 800%;
+            animation: gradientAnimation 10s ease infinite;
+            color: white !important;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            background: linear-gradient(270deg, #f2f4f6, #4392e0, #20b186, #6aedb4, #fcb045, #fd1d1d, #833ab4, #ff5722);
+            background-size: 800% 800%;
+            animation: gradientAnimation 10s ease infinite;
+            color: white !important;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #495057;
+            color: white !important;
+        }
+
+        .card p {
+            color: #6c757d;
+            color: white !important;
+        }
+
+        footer {
+            background: #343a40;
+            color: #adb5bd;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .main {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body style="font-family: system-ui;">
+    <header>
+        <strong>Code Connect CUJ</strong>
+    </header>
+
+    <div class="container">
+        <div class="main">
+            <div class="card">
+                <h3>Card Title 1</h3>
+                <p>This is a simple card description. The content is concise and to the point.</p>
+            </div>
+            <div class="card">
+                <h3>Card Title 2</h3>
+                <p>Another card with different content. This shows the flexibility of the design.</p>
+            </div>
+            <div class="card">
+                <h3>Card Title 3</h3>
+                <p>Cards can hold any type of information. They are versatile and easy to style.</p>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <p>This sidebar can contain links, information, or anything you'd like to display alongside the main content.</p>
+        </aside>
+    </div>
+
+    <footer>
+        &copy; 2024 Code Connect. All rights reserved.
+    </footer>
+</body>
+</html>

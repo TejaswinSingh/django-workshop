@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title> Tasks Page </title>
+    </head>
+
+    <body>
+
+        <h2> Here are your tasks: </h2>
+
+        <ul>
+            {% for task in tasks %}
+
+                <li> {{ task }} </li>
+
+            {% endfor %}
+
+        </ul>
+
+        <a href="/add/"> Add tasks</a>
+
+    </body>
+
+</html>

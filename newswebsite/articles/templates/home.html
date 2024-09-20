@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title> Home Page - Daily Time </title>
+        <style>
+
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .link-div:hover {
+                opacity: 0.6;
+            }
+
+        </style>
+    </head>
+
+    <body style="font-family: system-ui;">
+
+        <div style="background-color: black; color: white; text-align: center; padding: 5px;">
+            <h1 style="font-family: 'Times New Roman', Times, serif;"> Daily Times </h1>
+            <h4> Latest News</h4>
+        </div>
+
+        <div style="margin-top: 1vw; padding: 10px;">
+
+            {% for article in articles %}
+
+                <a class="link-div" href="/article/{{ article.id }}/" style="text-decoration: none; color: black;">
+
+                    <div style="border: 2px solid black; padding: 10px; margin-bottom: 10px;">
+                    
+                        <div>
+                            <strong> {{ article.title }} </strong>
+                            <span style="color: rgb(43, 117, 214);"> {{ article.publish_date }} </span>
+                        </div>
+    
+                        <p style="color: rgb(151, 145, 145);"> {{ article.body|slice:":400" }}... </p>
+    
+                    </div>
+
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+    </body>
+
+</html>

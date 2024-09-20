@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title> Article Page - Daily Times </title>
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+        </style>
+
+    </head>
+
+    <body style="text-align: center; font-family: system-ui;">
+
+        <div style="background-color: black; color: white; padding: 10px; text-align: center;">
+            <h1 style="font-family: 'Times New Roman', Times, serif;"> Daily Times </h1>
+        </div>
+
+        <div style="display: inline-block; text-align: justify; max-width: 50vw; margin-top: 1vw;">
+
+            <a style="color: rgb(32, 117, 229);" href="/"> Back to Homepage</a>
+
+            <h2> {{ article.title }} </h2>
+
+            <p style="color: rgb(137, 131, 131);"> {{ article.publish_date }}  </p>
+
+            <img src="{{ article.image_link }}" style="width: 50vw; height: 30vw;">
+
+            <p>
+
+                {{ article.body }}
+
+            </p>
+
+            <div >
+
+                <h3>Comments</h3>
+                <hr>
+
+                <div style="color: rgb(158, 153, 153);">
+                    {% for comment in comments %}
+                        <h4> {{ comment.name }} </h4>
+                        <p> {{ comment.body }} </p>
+                        <hr style="color: rgb(158, 153, 153);">
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <div>
+                <h3> Leave your comments here!</h3>
+
+                <form action="/add_comment/{{ article.id }}/" method="post">
+
+                    {% csrf_token %}
+
+                    <input type="text" name="name" placeholder="your name?" style="width: 30vw;">
+                    <br> <br>
+                    <input type="text" name="body" placeholder="tell us what you liked..." style="width: 30vw; height: 5vw">
+                    <br> <br>
+                    <button type="submit">Comment</button>
+                    <br> <br>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title> Image Compression Website </title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+        </style>
+    </head>
+
+    <body style="font-family: system-ui; text-align: center; color: rgb(11, 102, 213);">
+
+        <div style="background-color: rgb(11, 102, 213); color: white; text-align: center; padding: 10px;">
+            <h1> Image Compression Website </h1>
+        </div>
+
+        <h3 style="margin-top: 10vw;"> Upload your image here! </h3>
+        <div style="border: 5px solid rgb(11, 102, 213); display: inline-block; text-align: justify; max-width: 50vw; padding: 50px; border-radius: 3em;">
+
+            <form action="/compress/" method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <input type="file" name="user-file">
+                <br> <br>
+                <input type="number" name="reduce-factor" placeholder="Reduce Factor">
+                <br> <br>
+                <button type="submit">Compress</button>
+
+            </form>
+
+        </div>
+        <h3 style="color: rgb(11, 102, 213, 0.5);"> {{ msg }} </h3>
+
+    </body>
+
+</html>
